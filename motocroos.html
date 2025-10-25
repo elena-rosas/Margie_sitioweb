@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚨 MOTOX EXTREMO: ZONA DE RIESGO 🚨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fjalla+One&display=swap" rel="stylesheet">
+    <style>
+        /* ESTILOS BASE */
+        :root {
+            --color-principal: #FFCC00; /* Amarillo Neón de Advertencia */
+            --color-secundario: #0A0A0A; /* Negro Profundo */
+            --color-fondo: #333333; /* Gris Oscuro Industrial */
+            --color-claro: #EFEFEF;
+            --fuente-titulo: 'Anton', sans-serif;
+            --fuente-cuerpo: 'Fjalla One', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--fuente-cuerpo);
+            line-height: 1.6;
+            background-color: var(--color-fondo);
+            color: var(--color-claro);
+            scroll-behavior: smooth;
+        }
+
+        /* TIPOGRAFÍA Y ENCABEZADOS */
+        h1, h2, h3 {
+            font-family: var(--fuente-titulo);
+            text-transform: uppercase;
+            letter-spacing: 4px; /* Muy espaciado */
+            color: var(--color-principal);
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.8); /* Efecto Neón */
+        }
+
+        h1 {
+            font-size: 5em;
+            line-height: 0.9;
+        }
+
+        h2 {
+            font-size: 3.5em;
+            margin-bottom: 0.5em;
+            text-align: center;
+            border: 4px solid var(--color-principal);
+            padding: 10px 30px;
+            background-color: var(--color-secundario);
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+            display: inline-block;
+            transform: skewX(-10deg); /* Efecto de inclinación para velocidad */
+        }
+
+        h2 span {
+            color: var(--color-claro);
+            text-shadow: none;
+        }
+
+        /* LAYOUT Y SECCIONES */
+        .contenedor {
+            width: 90%;
+            max-width: 1300px;
+            margin: auto;
+            padding: 30px 0;
+        }
+
+        /* HEADER: EL MURO DE ACERO */
+        header {
+            /* Simulación de textura de metal o camuflaje oscuro */
+            background: var(--color-secundario);
+            background-image: repeating-linear-gradient(45deg, var(--color-fondo) 0, var(--color-fondo) 1px, transparent 1px, transparent 5px), linear-gradient(to bottom, #222 0%, #000 100%);
+            
+            color: var(--color-claro);
+            padding: 120px 0 80px;
+            text-align: center;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 10px solid var(--color-principal);
+            position: relative;
+        }
+        header p {
+            font-size: 1.5em;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-claro);
+        }
+
+        /* BARRA DE NAVEGACIÓN - CINTA DE ADVERTENCIA */
+        nav {
+            background-color: var(--color-principal); /* Fondo de Advertencia */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(255, 204, 0, 0.7);
+        }
+
+        nav ul {
+            list-style: none;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 25px;
+        }
+
+        nav ul li a {
+            color: var(--color-secundario);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1.3em;
+            transition: color 0.3s, transform 0.3s;
+            text-shadow: 1px 1px 0 var(--color-claro);
+            padding: 5px 10px;
+        }
+
+        nav ul li a:hover {
+            color: var(--color-fondo);
+            background-color: var(--color-secundario);
+            transform: scale(1.1);
+        }
+
+        section {
+            padding: 80px 0;
+            text-align: center;
+            background-color: var(--color-fondo);
+        }
+
+        /* TARJETAS DE MOTOS - CAJAS DE MUNICIÓN */
+        .motos-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .moto-card {
+            background: linear-gradient(145deg, #1c1c1c, #353535); /* Degradado oscuro y profundo */
+            border: 5px solid var(--color-principal);
+            border-radius: 0; /* Bordes cuadrados */
+            overflow: hidden;
+            width: 320px;
+            text-align: left;
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.5); /* Neón alrededor */
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            transform: skewX(-3deg); /* Inclinación sutil */
+        }
+
+        .moto-card:hover {
+            transform: skewX(-3deg) scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 204, 0, 1);
+            border-color: var(--color-claro);
+        }
+
+        .moto-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 5px dashed var(--color-principal); /* Línea de peligro */
+        }
+
+        .moto-info {
+            padding: 20px;
+            color: var(--color-claro);
+        }
+
+        .moto-info h3 {
+            color: var(--color-claro);
+            font-size: 2em;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 0 var(--color-principal);
+            letter-spacing: 1px;
+            transform: skewX(3deg); /* Contra-inclinación para que el texto sea legible */
+        }
+
+        .moto-info p {
+            margin-bottom: 10px;
+            font-family: var(--fuente-cuerpo);
+            font-size: 1.1em;
+        }
+
+        .precio {
+            font-size: 2.5em;
+            color: var(--color-principal);
+            font-weight: bold;
+            margin-top: 15px;
+            text-shadow: 0 0 5px var(--color-principal);
+        }
+
+        /* BOTÓN PRINCIPAL - ACTIVACIÓN */
+        .boton {
+            background-color: var(--color-principal);
+            color: var(--color-secundario);
+            padding: 15px 35px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 0;
+            margin-top: 20px;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 1.3em;
+            border: 3px solid var(--color-secundario);
+            transform: skewX(-10deg);
+        }
+
+        .boton:hover {
+            background-color: var(--color-claro);
+            color: var(--color-secundario);
+            transform: skewX(-10deg) scale(1.05);
+            border-color: var(--color-principal);
+        }
+
+        /* BLOQUES DE INFORMACIÓN - PANELES DE CONTROL */
+        .info-bloque {
+            background-color: var(--color-secundario);
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 900px;
+            text-align: left;
+            border: 5px solid var(--color-principal);
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
+            transform: skewX(5deg);
+        }
+
+        .info-bloque * {
+            transform: skewX(-5deg); /* Contra-inclinación de contenido */
+        }
+
+        .info-bloque h3 {
+            color: var(--color-principal);
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            border-bottom: 2px dashed var(--color-claro);
+            padding-bottom: 5px;
+        }
+        .info-bloque p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: var(--color-claro);
+        }
+        .info-bloque ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+        .info-bloque ul li {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            position: relative;
+            padding-left: 30px;
+            color: var(--color-principal);
+        }
+        .info-bloque ul li::before {
+            content: '»'; /* Flecha o viñeta de estilo militar */
+            position: absolute;
+            left: 0;
+            color: var(--color-claro);
+            font-size: 1.5em;
+            line-height: 0.8;
+            top: 5px;
+        }
+
+        /* PIE DE PÁGINA */
+        footer {
+            background-color: var(--color-secundario);
+            color: var(--color-claro);
+            text-align: center;
+            padding: 25px 0;
+            border-top: 10px solid var(--color-principal);
+            font-family: var(--fuente-cuerpo);
+        }
+
+        footer a {
+            color: var(--color-principal);
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="contenedor">
+            <h1>ZONA DE <span>ALTO RIESGO</span></h1>
+            <h1>MX EXTREMO</h1>
+            <p>TU LICENCIA PARA LA VELOCIDAD OFF-ROAD. ALQUILA LA MÁQUINA DE COMPETENCIA.</p>
+            <a href="#motos" class="boton">¡ACTIVA LA RENTA!</a>
+        </div>
+    </header>
+
+    <nav>
+        <div class="contenedor">
+            <ul>
+                <li><a href="#motos">MÁQUINAS ⚙️</a></li>
+                <li><a href="#requisitos">PROTOCOLO 📝</a></li>
+                <li><a href="#seguridad">SEGURIDAD 🛡️</a></li>
+                <li><a href="#contacto">TRANSMISIÓN 📞</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="motos" class="motos">
+        <div class="contenedor">
+            <h2>ESPECIFICACIONES DE <span>NUESTRA FLOTA</span></h2>
+            <p style="color: var(--color-principal); font-size: 1.2em; margin-bottom: 40px; letter-spacing: 1px;">**ADVERTENCIA:** Solo máquinas de alta resistencia, probadas en los terrenos más hostiles.</p>
+            <div class="motos-grid">
+                <div class="moto-card">
+                    <img src="https://source.unsplash.com/400x300/?motocross-yamaha" alt="Moto Cross Yamaha YZ">
+                    <div class="moto-info">
+                        <h3>YAMAHA YZ <span>250F</span></h3>
+                        <p>Máquina calibrada para un equilibrio perfecto entre **agilidad y potencia**. Ideal para pilotos con experiencia en saltos y control avanzado.</p>
+                        <ul>
+                            <li>» Nivel: Intermedio-Avanzado</li>
+                            <li>» Cilindrada: 250cc</li>
+                        </ul>
+                        <p class="precio">UNIDAD $85 / DÍA</p>
+                        <a href="#" class="boton">» RESERVAR YZ</a>
+                    </div>
+                </div>
+                <div class="moto-card">
+                    <img src="https://source.unsplash.com/400x300/?motocross-ktm" alt="Moto Cross KTM SX-F">
+                    <div class="moto-info">
+                        <h3>KTM 450 <span>SX-F</span></h3>
+                        <p>Potencia **máxima** sin compromisos. Este modelo requiere un piloto experto y licencia de competición. Diseñada para la **victoria**.</p>
+                        <ul>
+                            <li>» Nivel: EXCLUSIVO EXPERTOS</li>
+                            <li>» Cilindrada: 450cc</li>
+                        </ul>
+                        <p class="precio">UNIDAD $130 / DÍA</p>
+                        <a href="#" class="boton">» ACTIVAR KTM</a>
+                    </div>
+                </div>
+                <div class="moto-card">
+                    <img src="https://source.unsplash.com/400x300/?motocross-honda" alt="Moto Cross Honda CRF">
+                    <div class="moto-info">
+                        <h3>HONDA <span>CRF 150R</span></h3>
+                        <p>El punto de entrada perfecto. Manejo predecible y potencia dosificada. Excelente para **iniciarse** en las técnicas de motocross.</p>
+                        <ul>
+                            <li>» Nivel: Principiante</li>
+                            <li>» Cilindrada: 150cc</li>
+                        </ul>
+                        <p class="precio">UNIDAD $70 / DÍA</p>
+                        <a href="#" class="boton">» RENTAR CRF</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="requisitos" class="requisitos">
+        <div class="contenedor">
+            <h2>PROTOCOLO DE <span>ACCESO</span></h2>
+            <p style="max-width: 700px; margin: 0 auto 40px; color: var(--color-claro); font-size: 1.2em;">El acceso a las máquinas requiere el cumplimiento de nuestro protocolo de seguridad y documentación. **¡NO HAY EXCEPCIONES!**</p>
+            <div class="info-bloque">
+                <h3>VERIFICACIÓN DE IDENTIDAD Y LICENCIAS (H3)</h3>
+                <ul>
+                    <li>» **Documentación Oficial:** Identificación vigente (DNI/Pasaporte).</li>
+                    <li>» **Permiso de Conducir:** Licencia Válida (Mínimo Auto).</li>
+                    <li>» **Depósito de Seguridad:** Obligatorio y devuelto al finalizar sin daños.</li>
+                </ul>
+                <h3 style="margin-top: 30px;">RESTRICCIÓN DE OPERACIÓN (H3)</h3>
+                <p>**EDAD:** Mínimo 18 años. Menores de 18 años requieren autorización notariada y supervisión constante de un adulto responsable.</p>
+                <p style="color: var(--color-principal); font-weight: bold;">NO SE TOLERA LA CONDUCCIÓN IMPRUDENTE O BAJO INFLUENCIA.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="seguridad" class="seguridad">
+        <div class="contenedor">
+            <h2>EQUIPO DE <span>PROTECCIÓN</span></h2>
+            <p style="max-width: 700px; margin: 0 auto 40px; color: var(--color-claro); font-size: 1.2em;">Su equipo es su línea de defensa. No arriesgue su integridad. **¡PROTECCIÓN ES OBLIGATORIA!**</p>
+            <div class="info-bloque">
+                <h3>EQUIPAMIENTO REQUERIDO (H3)</h3>
+                <ul>
+                    <li>» **CASCOS:** Certificados, de cara completa. (Disponibles para renta).</li>
+                    <li>» **PROTECCIONES:** Rodilleras, coderas y peto/chaleco protector.</li>
+                    <li>» **INSTRUCCIÓN:** Breve curso obligatorio de seguridad y manejo básico antes de la pista.</li>
+                </ul>
+                <h3 style="margin-top: 30px;">MANTENIMIENTO DE LA FLOTA (H3)</h3>
+                <p>Todas las motocicletas pasan una **inspección de 25 puntos** después de cada uso. **Nuestra flota está siempre en estado de ALERTA MÁXIMA**.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contacto">
+        <div class="contenedor">
+            <h2>FIN DE <span>TRANSMISIÓN</span></h2>
+            <p style="max-width: 700px; margin: 0 auto 40px; color: var(--color-claro); font-size: 1.2em;">Use los siguientes canales para la reserva o consultas de emergencia. </p>
+            <div class="info-bloque" style="max-width: 600px;">
+                <h3>CANALES DE COMUNICACIÓN (H3)</h3>
+                <p>📞 **LÍNEA DIRECTA:** <a href="tel:+XX-XXXX-XXXX" style="color: var(--color-principal);">+XX XXXX-XXXX</a></p>
+                <p>📧 **CORREO (24H):** <a href="mailto:alerta@motoxextremo.com" style="color: var(--color-principal);">alerta@motoxextremo.com</a></p>
+                <p>📍 **UBICACIÓN:** Base de Operaciones "Sector Alfa". (Solo acceso con reserva confirmada).</p>
+                <a href="mailto:alerta@motoxextremo.com" class="boton" style="margin-top: 30px;">» INICIAR CONTACTO</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="contenedor">
+            <p>&copy; 2025 MotoX Extremo: Zona de Riesgo. Todos los Derechos Reservados. | **PREPARESE PARA EL DESPEGUE**</p>
+        </div>
+    </footer>
+
+</body>
+</html>
